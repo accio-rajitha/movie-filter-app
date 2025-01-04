@@ -1,38 +1,111 @@
-.App {
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+th {
+  background-color: lightgray;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
+
+tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.genre-filter {
+  width: auto;
+  margin: 5px;
+  border: 1px solid gray;
+  background-color: lightgray;
+  padding: 10px;
+  box-shadow: 0px 0px 10px lightslategray;
+
+}
+
+
+.genre-button {
+  flex: 1;
+  margin: 5px 25px;
+  display: center;
+  background-color: rgb(181, 184, 188); 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  padding: 10px 15px; 
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s ease; 
+}
+
+
+.genre-button:hover {
+  background-color: #9ba9b8; 
+}
+
+
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+tr {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@media (max-width: 600px) {
+  th, td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
   }
 }
